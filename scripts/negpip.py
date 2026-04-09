@@ -142,6 +142,8 @@ class Script(modules.scripts.Script):
         # tokenize_line entirely.
         p.clear_prompt_cache()
 
+        p.extra_generation_params["NegPiP"] = True
+
         hook_anima_engine(p.sd_model.text_processing_engine_anima)
         hook_cross_attention()
 
