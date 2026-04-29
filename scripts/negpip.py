@@ -94,7 +94,7 @@ def hook_cross_attention():
     ):
         negpip_mask = _negpip_mask
 
-        if negpip_mask is None or context is None or self.is_selfattn:
+        if negpip_mask is None or context is None or self.is_SelfAttn:
             return orig_forward(self, x, context, rope_emb=rope_emb, transformer_options=transformer_options)
 
         q, k, v = self.compute_qkv(x, context, rope_emb=rope_emb)
